@@ -7,7 +7,7 @@
 }
 
 :root {
-  --color-background: #fbdbfd;
+  --color-background: #fbfbfd;
   --color-orange-dark: #FF8C00;
   --color-orange-light: #FFA500;
   --color-primary: #0d0d0d;
@@ -27,4 +27,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 85%;
+  padding-bottom: 0.6rem;
+  border-bottom: 0.1rem solid #ff8c00;
 }/*# sourceMappingURL=main.css.map */

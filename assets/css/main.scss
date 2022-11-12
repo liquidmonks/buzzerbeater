@@ -9,8 +9,7 @@
 //   Variable set root toolkit contains properties:values for color styling throughout the webpage
 
 :root {
-
---color-background: #fbdbfd;
+--color-background: #fbfbfd;
 --color-orange-dark: #FF8C00;
 --color-orange-light: #FFA500;
 --color-primary: #0d0d0d;
@@ -22,14 +21,25 @@
 --color-grey-5: #2a2e35;
 --color-grey-6: #12181b;
 --color-white: #fff;
-
 }
 
-body {
 
+// Body properties:values styling parameters
+
+body {
     background-color: var(--color-background);
     color: var(--color-grey-4);
     margin: 0;
     padding: 0;
     font-family: 'Poppins',sans-serif;
+}
+
+// Header properties:values styling parameters
+header {
+display: flex;
+justify-content: space-between;
+margin: auto;
+width: 85%;
+padding-bottom: 0.6rem;
+border-bottom: 0.1rem solid #ff8c00;
 }
