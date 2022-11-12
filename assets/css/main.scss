@@ -143,3 +143,12 @@ p {
 .hide {
     display: none;
 }
+
+// Quiz question text properties:values styling parameters - This is for the individual questions in the quiz
+
+#question {
+    color: var(--color-primary);
+    text-align: left;
+    font-size: 3rem;
+    font-weight: 800;
+}

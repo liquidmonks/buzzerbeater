@@ -113,4 +113,11 @@ p {
 
 .hide {
   display: none;
+}
+
+#question {
+  color: var(--color-primary);
+  text-align: left;
+  font-size: 3rem;
+  font-weight: 800;
 }/*# sourceMappingURL=main.css.map */
