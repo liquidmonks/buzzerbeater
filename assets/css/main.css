@@ -129,21 +129,21 @@ p {
   padding: 20px;
   border-radius: 20px;
   border: none;
-  box-shadow: 0 5px var(--color-grey-3);
+  box-shadow: 0 5px var(--color-orange-light);
   margin-top: 20px;
 }
 
 .btn:hover {
   background: var(--color-orange-dark);
   border-radius: 20px;
-  box-shadow: 0 4px var(--color-grey-3);
+  box-shadow: 0 4px var(--color-orange-light);
   cursor: pointer;
 }
 
 .btn:active {
   border: none;
   outline: none;
-  box-shadow: 0 0 var(--color-grey-3);
+  box-shadow: 0 0 var(--color-orange-light);
 }
 
 .btn:focus {
