@@ -43,3 +43,10 @@ width: 85%;
 padding-bottom: 0.6rem;
 border-bottom: 0.1rem solid #ff8c00;
 }
+
+// Scoreboard properties:values styling parameters
+
+#scoreboard:hover {
+    cursor: pointer;
+    color: var(--color-orange-dark)
+}
