@@ -71,3 +71,22 @@ header h2 {
     text-align: right;
     padding-right: 40px;
 }
+
+/* Main quiz title and description section */
+
+// Quiz title and description
+
+.quiz-start {
+    padding: 30px;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+}
+
+// H1 title properties:values styling parameters
+
+h1 {
+    color: var(--color-primary);
+    font-size: 3rem;
+    font-weight: 800;
+}

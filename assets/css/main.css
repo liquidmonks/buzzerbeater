@@ -56,4 +56,18 @@ header h2 {
   display: inline;
   text-align: right;
   padding-right: 40px;
+}
+
+/* Main quiz title and description section */
+.quiz-start {
+  padding: 30px;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+}
+
+h1 {
+  color: var(--color-primary);
+  font-size: 3rem;
+  font-weight: 800;
 }/*# sourceMappingURL=main.css.map */
