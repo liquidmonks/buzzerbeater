@@ -120,4 +120,39 @@ p {
   text-align: left;
   font-size: 3rem;
   font-weight: 800;
+}
+
+/* Button properties:values styling parameters */
+.btn {
+  background: var(--color-orange-dark);
+  color: var(--color-white);
+  padding: 20px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 5px var(--color-grey-3);
+  margin-top: 20px;
+}
+
+.btn:hover {
+  background: var(--color-orange-dark);
+  border-radius: 20px;
+  box-shadow: 0 4px var(--color-grey-3);
+  cursor: pointer;
+}
+
+.btn:active {
+  border: none;
+  outline: none;
+  box-shadow: 0 0 var(--color-grey-3);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn-board {
+  display: grid;
+  grid-template-rows: repeat(5, auto);
+  grid-gap: 5px;
+  margin: 20px 0;
 }/*# sourceMappingURL=main.css.map */
