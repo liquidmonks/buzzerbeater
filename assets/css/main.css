@@ -29,6 +29,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+/* Global Header properties:values styling parameters*/
 header {
   display: flex;
   justify-content: space-between;
@@ -41,4 +42,18 @@ header {
 #scoreboard:hover {
   cursor: pointer;
   color: var(--color-orange-dark);
+}
+
+header h2 {
+  padding-left: 40px;
+  font-size: 2rem;
+  display: inline;
+}
+
+.countdown {
+  font-size: 2rem;
+  color: var(--color-primary);
+  display: inline;
+  text-align: right;
+  padding-right: 40px;
 }/*# sourceMappingURL=main.css.map */
