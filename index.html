@@ -19,81 +19,82 @@
 
     </header>
     <!-- TODO: Add main section for primary game board -->
+    <main>
+        <!-- Game -->
 
-    <!-- Game -->
+        <!-- Quiz Introduction and Rules - Visible to the user -->
 
-    <!-- Quiz Introduction and Rules - Visible to the user -->
-
-    <div id="quiz-info" class="reveal">
+        <div id="quiz-info" class="reveal">
 
 
-        <div class="quiz-start">
-            <h1>Coding Quiz Buzzer Beater</h1>
-            <p>Show your coding knowledge by beating your opponent's high scores.</p>
-            <p>Rules:</p>
-            <ul>
-                <li>Start the quiz and answer each question under the time limit</li>
-                <li>Enter your initial after the quiz ends.</li>
-                <li>Winning Score = Total # of correct answers + Total time left on the clock</li>
-            </ul>
-            <button class="btn-over" id="start-quiz">Go!</button>
+            <div class="quiz-start">
+                <h1>Coding Quiz Buzzer Beater</h1>
+                <p>Show your coding knowledge by beating your opponent's high scores.</p>
+                <p>Rules:</p>
+                <ul>
+                    <li>Start the quiz and answer each question under the time limit</li>
+                    <li>Enter your initial after the quiz ends.</li>
+                    <li>Winning Score = Total # of correct answers + Total time left on the clock</li>
+                </ul>
+                <button class="btn-over" id="start-quiz">Go!</button>
+            </div>
+
         </div>
 
-    </div>
+        <!-- Quiz Board - Contains quiz questions not visible to the user upon page load-->
 
-    <!-- Quiz Board - Contains quiz questions not visible to the user upon page load-->
-
-    <div id="quiz-board" class="hide">
-        <div class="quiz-questions">
-            <div id="question"></div>
-            <div id="answer-key" class="btn-board"></div>
-        </div>
-    </div>
-
-    <!-- Quiz Over - Contains text notification that the game is over and a prompt for user to enter their initials for scoreboard  -->
-    <div id="quiz-over" class="hide">
-        <div class="quiz-complete">
-            <div id="score-announce">
-                <h1>Quiz Over!!!</h1>
+        <div id="quiz-board" class="hide">
+            <div class="quiz-questions">
+                <div id="question"></div>
+                <div id="answer-key" class="btn-board"></div>
             </div>
         </div>
-        <!-- User input form to record user initials -->
-        <form id="record-initials" class="initials">
-            <p>Record Initials:
-                <input type="text" name="initials" id="initials" class="text-input" />
-                <button class="btn-over" id="record-score" type="record">Record</button>
-            </p>
-        </form>
-    </div>
 
-    <!-- Scoreboard - Contains a ranked lists of user scores (Highest score to lowest score) -->
+        <!-- Quiz Over - Contains text notification that the game is over and a prompt for user to enter their initials for scoreboard  -->
+        <div id="quiz-over" class="hide">
+            <div class="quiz-complete">
+                <div id="score-announce">
+                    <h1>Quiz Over!!!</h1>
+                </div>
+            </div>
+            <!-- User input form to record user initials -->
+            <form id="record-initials" class="initials">
+                <p>Record Initials:
+                    <input type="text" name="initials" id="initials" class="text-input" />
+                    <button class="btn-over" id="record-score" type="record">Record</button>
+                </p>
+            </form>
+        </div>
 
-    <div id="scoreboard-grid" class="hide">
-        <div class="winners-scoreboard">
-            <h1 class="winners-score">Winners Circle</h1>
-            <ol id="winners-list" class="scores-list"></ol>
-            <div>
-                <button class="btn" id="return">Return To Quiz</button>
-                <button class="btn" id="clear-scoreboard">Clear Scoreboard</button>
+        <!-- Scoreboard - Contains a ranked lists of user scores (Highest score to lowest score) -->
+
+        <div id="scoreboard-grid" class="hide">
+            <div class="winners-scoreboard">
+                <h1 class="winners-score">Winners Circle</h1>
+                <ol id="winners-list" class="scores-list"></ol>
+                <div>
+                    <button class="btn" id="return">Return To Quiz</button>
+                    <button class="btn" id="clear-scoreboard">Clear Scoreboard</button>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Quiz Key - Reveals correct and incorrect confirmation ot the user -->
+        <!-- Quiz Key - Reveals correct and incorrect confirmation ot the user -->
 
-    <!-- Correct answer confirmation prompt -->
-    <div class="hide" id="correct">
-        <h2>Correct</h2>
-    </div>
+        <!-- Correct answer confirmation prompt -->
+        <div class="hide" id="correct">
+            <h2>Correct</h2>
+        </div>
 
-    <!-- Incorrect answer confirmation prompt -->
-    <div class="hide" id="incorrect">
-        <h2>Incorrect</h2>
-    </div>
+        <!-- Incorrect answer confirmation prompt -->
+        <div class="hide" id="incorrect">
+            <h2>Incorrect</h2>
+        </div>
 
 
-    <script src="./assets/js/script.js"></script>
+        <script src="./assets/js/script.js"></script>
 
+    </main>
 </body>
 
 </html>
