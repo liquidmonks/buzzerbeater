@@ -105,4 +105,12 @@ p {
 
 .quiz-complete input:focus {
   border: 2px solid var(--color-primary);
+}
+
+.reveal {
+  display: flex;
+}
+
+.hide {
+  display: none;
 }/*# sourceMappingURL=main.css.map */

@@ -119,7 +119,7 @@ p {
     margin: auto;
 }
 
-// Quiz complete section properties:values styling parameters - Hidden from user at default load
+// Quiz complete section properties:values styling parameters - Hidden from user at default page load
 
 .quiz-complete h1, .quiz-complete {
     outline: thick;
@@ -132,4 +132,14 @@ p {
 
 .quiz-complete input:focus {
     border: 2px solid var(--color-primary);
+}
+
+// Reveal and Hide properties:values styling parameters - This hides the quiz complete section from user at default page load
+
+.reveal {
+    display: flex;
+}
+
+.hide {
+    display: none;
 }
