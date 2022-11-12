@@ -109,3 +109,12 @@ p {
 .rules-list {
     text-align: left;
 }
+
+// Quiz questions section - Hidden from user at default
+
+.quiz-questions{
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 50px 30px;
+    margin: auto;
+}

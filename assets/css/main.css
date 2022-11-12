@@ -85,4 +85,11 @@ p {
 
 .rules-list {
   text-align: left;
+}
+
+.quiz-questions {
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 50px 30px;
+  margin: auto;
 }/*# sourceMappingURL=main.css.map */
