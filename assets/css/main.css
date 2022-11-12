@@ -75,4 +75,14 @@ h1 {
 p {
   color: var(--color-primary);
   font-size: 2rem;
+}
+
+.rules-title {
+  font-size: 20px;
+  align-items: left;
+  text-align: left;
+}
+
+.rules-list {
+  text-align: left;
 }/*# sourceMappingURL=main.css.map */
