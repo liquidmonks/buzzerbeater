@@ -123,3 +123,10 @@ let setQuestion = function () {
   resetAnswers();
   displayQuestion(arrayQuizQuestions[QuestionIndex]);
 };
+
+// Hides the answer buttons
+let resetAnswers = function () {
+  while (answerKeyID.firstChild) {
+    answerKeyID.removeChild(answerKeyID.firstChild);
+  }
+};
