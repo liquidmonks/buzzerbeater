@@ -37,5 +37,9 @@ let spareTime; // Remaining time left after countdown
 let quizDone;
 timerID.innerText = 0;
 
-// Winning Score list Array
-let WinningScores = [];
+// Winning Score list Array parameter
+let arrayWinningScores = [];
+
+// Array assignment for quiz questions
+let arrayQuizQuestions;
+let QuestionIndex = 0;
