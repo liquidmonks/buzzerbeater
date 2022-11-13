@@ -26,3 +26,13 @@ let incorrectID = document.getElementById("incorrect");
 let btnStartGameID = document.getElementById("start-game"); // Quiz info and description section
 let btnReturnID = document.getElementById("return"); // Scoreboard grid section
 let btnClearScoreboardID = document.getElementById("clear-scoreboard"); // Scoreboard grid section
+
+// Quiz Q&A ID Elements
+let questionID = document.getElementById("question");
+let answerKeyID = document.getElementById("answer-key");
+
+let timerID = document.querySelector("#timer"); // Timer in Header section
+let score = 0;
+let sparetime; // Remaining time left after countdown
+let quizdone;
+timerID.innerText = 0;
