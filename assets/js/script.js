@@ -236,3 +236,26 @@ displayWinningScores();
 let saveWinningScore = function () {
   localStorage.setItem("winningScores", JSON.stringify(winningScores));
 };
+
+// Loads variable values when the webpage loads
+
+let loadWinningScore = function () {
+  var LoadedWinningScores = localStorage.getItem("winningScores");
+  if (!LoadedWinningScores) {
+    return false;
+  }
+
+  LoadedWinningScores = JSON.parse(LoadedWinningScores);
+  LoadedWinningScores.sort((a, b) => {
+    return b.score - a.score;
+  });
+
+  for (let i = 0; i < LoadedWinningScores.length; i++) {
+    let highscoreEl = document.createElement("li");
+    highscoreEl.ClassName = "winners-score";
+    highscoreEl.innerText = LoadedWinningScores[i].initials + " - " + LoadedWinningScores[i].score;
+    listHighScoreEl.appendChild(highscoreEl);
+
+    winningScores.push(LoadedWinningScores[i]);
+  }
+};
