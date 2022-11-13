@@ -102,3 +102,17 @@ let setTime = function () {
     }
   }, 1000);
 };
+
+// Reveals and hides the Quiz from the Home Page
+
+let startGame = function () {
+  // Reveals and hides the quiz from the home page.
+  quizInfoID.classList.add("hide");
+  quizInfoID.classList.remove("reveal");
+  quizBoardID.classList.remove("hide");
+  quizBoardID.classList.add("show");
+  //Shuffle the questions so they show in random order
+  arrayQuizQuestions = questions.sort(() => Math.random() - 0.5);
+  setTime();
+  setQuestion();
+};
