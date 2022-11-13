@@ -133,15 +133,25 @@ let resetAnswers = function () {
 };
 
 // Reveals questions to the user along with an answer button check
-
 let displayQuestion = function (index) {
   questionID.innerText = index.q;
   for (let i = 0; i < index.choices.length; i++) {
-    var answerKey = document.createElement("button");
+    let answerKey = document.createElement("button");
     answerKey.innerText = index.choices[i].choice;
     answerKey.classList.add("btn");
-    aanswerKey.classList.add("answerbtn");
+    answerKey.classList.add("answerbtn");
     answerKey.addEventListener("click", answerCheck);
     answerKeyID.appendChild(answerKey);
+  }
+};
+
+// Reveals correct! on the screen after the user chooses the correct answer
+
+let answerCorrect = function () {
+  if ((correctID.className = "hide")) {
+    correctID.classList.remove("hide");
+    correctID.classList.add("banner");
+    incorrrectID.classList.remove("banner");
+    incorrectID.classList.add("hide");
   }
 };
