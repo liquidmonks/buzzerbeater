@@ -166,3 +166,13 @@ let answerIncorrect = function () {
     correctID.classList.add("hide");
   }
 };
+
+// Moves the quiz page to the next question then checks for remaining questions
+
+QuestionIndex++;
+if (arrayQuizQuestions.length > QuestionIndex + 1) {
+  setQuestion();
+} else {
+  quizDone = "true";
+  showScore();
+}
