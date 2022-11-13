@@ -125,8 +125,23 @@ let setQuestion = function () {
 };
 
 // Hides the answer buttons
+
 let resetAnswers = function () {
   while (answerKeyID.firstChild) {
     answerKeyID.removeChild(answerKeyID.firstChild);
+  }
+};
+
+// Reveals questions to the user along with an answer button check
+
+let displayQuestion = function (index) {
+  questionID.innerText = index.q;
+  for (let i = 0; i < index.choices.length; i++) {
+    var answerKey = document.createElement("button");
+    answerKey.innerText = index.choices[i].choice;
+    answerKey.classList.add("btn");
+    aanswerKey.classList.add("answerbtn");
+    answerKey.addEventListener("click", answerCheck);
+    answerKeyID.appendChild(answerKey);
   }
 };
