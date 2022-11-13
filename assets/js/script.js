@@ -151,7 +151,7 @@ let answerCorrect = function () {
   if ((correctID.className = "hide")) {
     correctID.classList.remove("hide");
     correctID.classList.add("banner");
-    incorrrectID.classList.remove("banner");
+    incorrectID.classList.remove("banner");
     incorrectID.classList.add("hide");
   }
 };
@@ -176,3 +176,15 @@ if (arrayQuizQuestions.length > QuestionIndex + 1) {
   quizDone = "true";
   showScore();
 }
+
+// Reveals the total score on the screen when the quiz is complete
+
+let showScore = function () {
+  quizBoardID.classList.add("hide");
+  quizBoardID.classList.remove("hide");
+  quizOverID.classList.add("reveal");
+
+  let scoreDisplay = document.createElement("p");
+  scoreDisplay.innerText = "Your quiz score is " + score + "!";
+  scoreAnnounceiD.appendChild(scoreDisplay);
+};
