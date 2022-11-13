@@ -81,3 +81,24 @@ let renderHomePage = function () {
     incorrectID.classList.add("hide");
   }
 };
+
+// Restarts quiz at default time of 20 seconds if quizDone == true at 1 second intervals.
+
+let setTime = function () {
+  timeleft = 20;
+
+  let checkTime = setInterval(function () {
+    timerID.innerText = spareTime;
+    timeleft--;
+
+    if (quizDone) {
+      clearInterval(checkTime);
+    }
+
+    if (spareTime < 0) {
+      showScore();
+      timerID.innerText = 0;
+      clearInterval(checkTime);
+    }
+  }, 1000);
+};
