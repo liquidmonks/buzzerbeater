@@ -181,7 +181,7 @@ if (arrayQuizQuestions.length > QuestionIndex + 1) {
 
 let showScore = function () {
   quizBoardID.classList.add("hide");
-  quizBoardID.classList.remove("hide");
+  quizOverID.classList.remove("hide");
   quizOverID.classList.add("reveal");
 
   let scoreDisplay = document.createElement("p");
@@ -257,5 +257,37 @@ let loadWinningScore = function () {
     listHighScoreEl.appendChild(highscoreEl);
 
     winningScores.push(LoadedWinningScores[i]);
+  }
+};
+
+// Displays the winning score from the Winner's Circle page when link is clicked or initials are entered
+
+let displayWinningScores = function () {
+  quizInfoID.classList.remove("hide");
+  quizInfoID.classList.add("reveal");
+  quizDone = "true";
+
+  if ((quizOverID.className = "reveal")) {
+    quizOverID.classList.remove("reveal");
+    quizOverID.classList.add("hide");
+  }
+  if ((quizBoardID.className = "reveal")) {
+    quizBoardID.classList.remove("reveal");
+    quizBoardID.classList.add("hide");
+  }
+
+  if ((quizBoardID.className = "reveal")) {
+    quizBoardID.classList.remove("reveal");
+    quizBoardID.classList.add("hide");
+  }
+
+  if ((correctID.className = "reveal")) {
+    correctID.classList.remove("reveal");
+    correctID.classList.add("hide");
+  }
+
+  if ((incorrectID.className = "reveal")) {
+    incorrectID.classList.remove("reveal");
+    incorrectID.classList.add("hide");
   }
 };
