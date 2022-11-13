@@ -155,3 +155,14 @@ let answerCorrect = function () {
     incorrectID.classList.add("hide");
   }
 };
+
+// Reveals incorrect! on screen after the user chooses the incorrect answer
+
+let answerIncorrect = function () {
+  if ((incorrectID.className = "hide")) {
+    incorrectID.classList.remove("hide");
+    incorrectID.classList.add("banner");
+    correctID.classList.remove("banner");
+    correctID.classList.add("hide");
+  }
+};
