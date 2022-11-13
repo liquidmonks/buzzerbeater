@@ -116,3 +116,10 @@ let startGame = function () {
   setTime();
   setQuestion();
 };
+
+// Moves the user along to the next question
+
+let setQuestion = function () {
+  resetAnswers();
+  displayQuestion(arrayQuizQuestions[QuestionIndex]);
+};
