@@ -222,11 +222,17 @@ while (winnersListID.firstChild) {
 // Creates winning scores from highest to lowest in the Winner's Circle
 
 for (let i = 0; i < arrayWinningScores.length; i++) {
-  var highscoreID = document.createElement("li");
-  highscoreID.ClassName = "winners-score";
-  highscoreID.innerHTML = arrayWinningScores[i].initials + " - " + arrayWinningScores[i].score;
-  winnersListID.appendChild(highscoreID);
+  var highScoreID = document.createElement("li");
+  highScoreID.ClassName = "winners-score";
+  highScoreID.innerHTML = arrayWinningScores[i].initials + " - " + arrayWinningScores[i].score;
+  winnersListID.appendChild(highScoreID);
 }
 
 saveWinningScore();
 displayWinningScores();
+
+// Saves the winning score
+
+let saveWinningScore = function () {
+  localStorage.setItem("winningScores", JSON.stringify(winningScores));
+};
