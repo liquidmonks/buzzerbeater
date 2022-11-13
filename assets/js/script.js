@@ -212,3 +212,9 @@ arrayWinningScores.push(WinningScore);
 arrayWinningScores.sort((a, b) => {
   return b.score - a.score;
 });
+
+// Clears the winning score from the Winner's Circle
+
+while (winnersListID.firstChild) {
+  winnersListID.removeChild(winnersListID.firstChild);
+}
