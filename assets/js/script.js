@@ -56,3 +56,28 @@ let questions = [
   { q: "What characters are used to create a function body in Javascript?", a: "3. curly braces", choices: [{ choice: "1. parenthesis" }, { choice: "2. quotation marks" }, { choice: "3. Curly braces" }, { choice: "4. dollar signs" }] },
   { q: "Name an application programing interface where a DOM is located?", a: "1. HTML document", choices: [{ choice: "1. HTML document" }, { choice: "2. local storage" }, { choice: "3. XLM document" }, { choice: "4. the cloud" }] },
 ];
+
+/* Return to main quiz page when the user clicks on the return button from the scoreboard page */
+
+let renderHomePage = function () {
+  quizInfoID.classList.add("hide");
+  quizInfoID.classList.remove("reveal");
+  quizBoardID.classList.remove("hide");
+  quizBoardID.classList.add("reveal");
+  scoreAnnounceID.removeChild(scoreAnnounceID.lastChild);
+  QuestionIndex = 0;
+  quizDone = "";
+  timerID.textContent = 0;
+  score = 0;
+
+  // reveal and hide values
+
+  if ((correctID.className = "reveal")) {
+    correctID.classList.remove("reveal");
+    correctID.classList.add("reveal");
+  }
+  if ((incorrectID.className = "reveal")) {
+    incorrectID.classList.remove("reveal");
+    incorrectID.classList.add("hide");
+  }
+};
