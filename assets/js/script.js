@@ -218,3 +218,15 @@ arrayWinningScores.sort((a, b) => {
 while (winnersListID.firstChild) {
   winnersListID.removeChild(winnersListID.firstChild);
 }
+
+// Creates winning scores from highest to lowest in the Winner's Circle
+
+for (let i = 0; i < arrayWinningScores.length; i++) {
+  var highscoreID = document.createElement("li");
+  highscoreID.ClassName = "winners-score";
+  highscoreID.innerHTML = arrayWinningScores[i].initials + " - " + arrayWinningScores[i].score;
+  winnersListID.appendChild(highscoreID);
+}
+
+saveWinningScore();
+displayWinningScores();
