@@ -251,10 +251,10 @@ let loadWinningScore = function () {
   });
 
   for (let i = 0; i < LoadedWinningScores.length; i++) {
-    let highscoreEl = document.createElement("li");
-    highscoreEl.ClassName = "winners-score";
-    highscoreEl.innerText = LoadedWinningScores[i].initials + " - " + LoadedWinningScores[i].score;
-    listHighScoreEl.appendChild(highscoreEl);
+    let highscoreID = document.createElement("li");
+    highscoreID.ClassName = "winners-score";
+    highscoreID.innerText = LoadedWinningScores[i].initials + " - " + LoadedWinningScores[i].score;
+    winnersListID.appendChild(highscoreID);
 
     winningScores.push(LoadedWinningScores[i]);
   }
@@ -291,3 +291,28 @@ let displayWinningScores = function () {
     incorrectID.classList.add("hide");
   }
 };
+
+// Clears the high scores from the Winner's Circle
+
+let clearScores = function () {
+  winningScores = [];
+
+  while (winnersListID.firstChild) {
+    winnersListID.removeChild(winnersListID.firstChild);
+  }
+
+  localStorage.clear(winningScores);
+};
+
+loadWinningScore();
+
+// Starts quiz when user clicks Let's Go!
+btnStartGameID.addEventListener("click", startGame);
+// Records initials when user clicks submit button or hits Enter key on keyboard
+formInitials.addEventListener("submit", createHighScore);
+// When user clicks on High Scores from quiz home page
+winnersListID.addEventListener("click", displayWinningScores);
+// When user clicks on the return button
+btnReturnID.addEventListener("click", renderHomePage);
+// When user clicks on the clear scores button
+btnClearScoreboardID.addEventListener("click", clearScores);
