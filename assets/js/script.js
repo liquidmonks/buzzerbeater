@@ -201,8 +201,14 @@ let createHighScore = function (event) {
 
   formInitials.reset();
 
-  let HighScore = {
+  let WinningScore = {
     initials: initials,
     score: score,
   };
 };
+
+// Pushes and sorts winning scores
+arrayWinningScores.push(WinningScore);
+arrayWinningScores.sort((a, b) => {
+  return b.score - a.score;
+});
