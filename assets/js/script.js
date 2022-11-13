@@ -4,6 +4,7 @@
 
 // Quiz Board Section
 let quizQuestionsID = document.getElementById("quiz-questions");
+let quizInfoID = document.getElementById("quiz-info");
 let quizBoardID = document.getElementById("quiz-board");
 
 // Quiz Over Section
