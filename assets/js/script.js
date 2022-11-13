@@ -33,6 +33,9 @@ let answerKeyID = document.getElementById("answer-key");
 
 let timerID = document.querySelector("#timer"); // Timer in Header section
 let score = 0;
-let sparetime; // Remaining time left after countdown
-let quizdone;
+let spareTime; // Remaining time left after countdown
+let quizDone;
 timerID.innerText = 0;
+
+// Winning Score list Array
+let WinningScores = [];
