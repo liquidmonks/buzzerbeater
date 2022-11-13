@@ -186,5 +186,23 @@ let showScore = function () {
 
   let scoreDisplay = document.createElement("p");
   scoreDisplay.innerText = "Your quiz score is " + score + "!";
-  scoreAnnounceiD.appendChild(scoreDisplay);
+  scoreAnnounceID.appendChild(scoreDisplay);
+};
+
+// Tabulates the high score values
+
+let createHighScore = function (event) {
+  event.preventDefault();
+  let initials = document.querySelector("#initials").value;
+  if (!initials) {
+    alert("Enter your initials!");
+    return;
+  }
+
+  formInitials.reset();
+
+  let HighScore = {
+    initials: initials,
+    score: score,
+  };
 };
