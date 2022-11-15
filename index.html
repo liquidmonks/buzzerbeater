@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
     <!-- Stylesheet -->
     <link rel="stylesheet" href="./assets/css/main.css">
     <title>Coding Quiz Buzzer Beater</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -19,82 +19,80 @@
 
     </header>
     <!-- TODO: Add main section for primary game board -->
-    <main>
-        <!-- Game -->
 
-        <!-- Quiz Introduction and Rules - Visible to the user -->
+    <!-- Game -->
 
-        <div id="quiz-info" class="reveal">
+    <!-- Quiz Introduction and Rules - Visible to the user -->
 
-
-            <div class="quiz-start">
-                <h1>Coding Quiz Buzzer Beater</h1>
-                <p>Show your coding knowledge by beating your opponent's high scores.</p>
-                <p class="rules-title">Rules:</p>
-                <ul class="rules-list">
-                    <li>Start the quiz and answer each question under the time limit</li>
-                    <li>Enter your initial after the quiz ends.</li>
-                    <li>Winning Score = Total # of correct answers + Total time left on the clock</li>
-                </ul>
-                <button class="btn-over" id="start-quiz">Let's Go!</button>
-            </div>
-
+    <div id="quiz-info" class="reveal">
+        <div class="quiz-start">
+            <h1>Coding Quiz Buzzer Beater</h1>
+            <p>Show your coding knowledge by beating your opponent's high scores.</p>
+            <p class="rules-title">Rules:</p>
+            <ul class="rules-list">
+                <li>Start the quiz and answer each question under the time limit</li>
+                <li>Enter your initial after the quiz ends.</li>
+                <li>Winning Score = Total # of correct answers + Total time left on the clock</li>
+            </ul>
+            <button class="btn-over" id="start-quiz">Let's Go!</button>
         </div>
+    </div>
 
-        <!-- Quiz Board - Contains quiz questions not visible to the user upon page load-->
+    <!-- Quiz Board - Contains quiz questions not visible to the user upon page load-->
 
-        <div id="quiz-board" class="hide">
-            <div class="quiz-questions">
-                <div id="question"></div>
-                <div id="answer-key" class="btn-board"></div>
-            </div>
+    <div id="quiz-board" class="hide">
+        <div class="quiz-questions">
+            <div id="question"></div>
+            <div id="answer-key" class="btn-board"></div>
         </div>
+    </div>
 
-        <!-- Quiz Over - Contains text notification that the game is over and a prompt for user to enter their initials for scoreboard  -->
-        <div id="quiz-over" class="hide">
-            <div class="quiz-complete">
-                <div id="score-announce">
-                    <h1>Quiz Over!!!</h1>
-                </div>
-            </div>
-            <!-- User input form to record user initials -->
-            <form id="record-initials" class="initials">
-                <p>Record Initials:
-                    <input type="text" name="initials" id="initials" class="text-input" />
-                    <button class="btn-over" id="record-score" type="record">Record</button>
-                </p>
-            </form>
-        </div>
-
-        <!-- Scoreboard - Contains a ranked lists of user scores (Highest score to lowest score) -->
-
-        <div id="scoreboard-grid" class="hide">
-            <div class="winners-scoreboard">
-                <h1 class="winners-score">Winners Circle</h1>
-                <ol id="winners-list" class="scores-list"></ol>
-                <div>
-                    <button class="btn" id="return">Return To Quiz</button>
-                    <button class="btn" id="clear-scoreboard">Clear Scoreboard</button>
-                </div>
+    <!-- Quiz Over - Contains text notification that the game is over and a prompt for user to enter their initials for scoreboard  -->
+    <div id="quiz-over" class="hide">
+        <div class="quiz-complete">
+            <div id="score-announce">
+                <h1>Quiz Over!!!</h1>
             </div>
         </div>
+        <!-- User input form to record user initials -->
+        <form id="record-initials" class="initials">
+            <p>Record Initials:
+                <input type="text" name="initials" id="initials" class="text-input" />
+                <button class="btn-over" id="record-score" type="record">Record</button>
+            </p>
+        </form>
+    </div>
 
-        <!-- Quiz Key - Reveals correct and incorrect confirmation ot the user -->
+    <!-- Scoreboard - Contains a ranked lists of user scores (Highest score to lowest score) -->
 
-        <!-- Correct answer confirmation prompt -->
-        <div class="hide" id="correct">
-            <h2>Correct</h2>
+    <div id="scoreboard-grid" class="hide">
+        <div class="winners-scoreboard">
+            <h1 class="winners-score">Winners Circle</h1>
+            <ol id="winners-list" class="scores-list"></ol>
+            <div>
+                <button class="btn" id="return">Return To Quiz</button>
+                <button class="btn" id="clear-scoreboard">Clear Scoreboard</button>
+            </div>
         </div>
+    </div>
 
-        <!-- Incorrect answer confirmation prompt -->
-        <div class="hide" id="incorrect">
-            <h2>Incorrect</h2>
-        </div>
+    <!-- Quiz Key - Reveals correct and incorrect confirmation ot the user -->
+
+    <!-- Correct answer confirmation prompt -->
+    <div class="hide" id="correct">
+        <h2>Correct</h2>
+    </div>
+
+    <!-- Incorrect answer confirmation prompt -->
+    <div class="hide" id="incorrect">
+        <h2>Incorrect</h2>
+    </div>
 
 
-        <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/script.js"></script>
 
-    </main>
+
 </body>
+<script src="script.js"></script>
 
 </html>

@@ -1,30 +1,27 @@
-/* Global styling properties:values utilizing Google fonts */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-  }
-
-//   Variable set root toolkit contains properties:values for color styling throughout the webpage
-
-:root {
---color-background: #fbfbfd;
---color-orange-dark: #FF8C00;
---color-orange-light: #FFA500;
---color-primary: #0d0d0d;
---color-grey-0: #f8f8f8;
---color-grey-1: #dbe1e8;
---color-grey-2: #b2becd;
---color-grey-3: #6c7983;
---color-grey-4: #454e56;
---color-grey-5: #2a2e35;
---color-grey-6: #12181b;
---color-white: #fff;
 }
 
+//   Variable set root toolkit contains properties:values for color styling throughout the webpage
+     :root {
 
-// Body properties:values styling parameters
+         --color-background: #fbdbfd;
+         --color-orange-dark: #FF8C00;
+         --color-orange-light: #FFA500;
+         --color-primary: #0d0d0d;
+         --color-grey-0: #f8f8f8;
+         --color-grey-1: #dbe1e8;
+         --color-grey-2: #b2becd;
+         --color-grey-3: #6c7983;
+         --color-grey-4: #454e56;
+         --color-grey-5: #2a2e35;
+         --color-grey-6: #12181b;
+         --color-white: #fff;
+
+     }
 
 body {
     background-color: var(--color-background);
@@ -34,71 +31,59 @@ body {
     font-family: 'Poppins',sans-serif;
 }
 
-/* Global Header properties:values styling parameters*/
-
-// Header properties:values styling parameters
-
+/* Header */
 header {
-display: flex;
-justify-content: space-between;
-margin: auto;
-width: 85%;
-padding-bottom: 0.6rem;
-border-bottom: 0.1rem solid #ff8c00;
-}
+    background-color: var(--color-orange-light);
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 85%;
+    padding-bottom: 0.6em;
+    border-bottom: 0.1em solid #FF8C00;
 
-// Scoreboard properties:values styling parameters
+}
 
 #scoreboard:hover {
     cursor: pointer;
     color: var(--color-orange-dark)
 }
 
-// Scoreboard h2 header text properties:values styling parameters
-
 header h2 {
     padding-left: 40px;
-    font-size: 2rem;
+    font-size: 2.0rem;
     display: inline;
 }
 
-// Scoreboard timer header text properties:values styling parameters
-
-.countdown {
+.timer {
     font-size: 2.0rem;
-    color: var(--color-primary);
+    color: var(--color-grey-0);
     display: inline;
     text-align: right;
-    padding-right: 40px;
+    padding-right: 20px;
 }
 
-/* Main quiz title and description section */
-
-// Quiz title and description
-
+/*Main content */
 .quiz-start {
-    padding: 30px;
+    padding: 20px;
     flex-direction: column;
     width: 50%;
     margin: auto;
+    align-items: center;
+    text-align: center;
 }
 
-// H1 title properties:values styling parameters
-
 h1 {
-    color: var(--color-primary);
+    color: var(--primary);
     font-size: 3rem;
     font-weight: 800;
 }
 
-// P tag quiz description properties:values styling parameters
-
 p {
-    color: var(--color-primary);
+    color: var(--primary);
     font-size: 2rem;
 }
 
-// Quiz Rules title properties:values styling parameters
+
 
 .rules-title {
     font-size: 20px;
@@ -110,18 +95,19 @@ p {
     text-align: left;
 }
 
-// Quiz questions section properties:values styling parameters - Hidden from user at default page load
-
-.quiz-questions{
+.quiz-questions {
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 50px 30px;
+    padding: 40px 20px;
     margin: auto;
 }
 
-// Quiz complete section properties:values styling parameters - Hidden from user at default page load
 
-.quiz-complete h1, .quiz-complete {
+.quiz-complete h1, .quiz-complete p {
+    text-align: left
+}
+
+.quiz-complete input {
     outline: thick;
     border-width: 1px;
     padding: 5px;
@@ -134,8 +120,6 @@ p {
     border: 2px solid var(--color-primary);
 }
 
-// Reveal and Hide properties:values styling parameters - This hides the quiz complete section from user at default page load
-
 .reveal {
     display: flex;
 }
@@ -144,41 +128,40 @@ p {
     display: none;
 }
 
-// Quiz question text properties:values styling parameters - This is for the individual questions in the quiz
-
 #question {
-    color: var(--color-primary);
+    color: var(--primary);
     text-align: left;
-    font-size: 3rem;
-    font-weight: 800;
+    font-size: 3.0rem;
+    font-weight: bold;
 }
 
-// TODO: Add styling for high score list
 
+#high-score {
+    text-align: left;
+}
 
-/* Button properties:values styling parameters */
-
-.btn{
-    background: var(--color-orange-dark);
-    color: var(--color-white);
-    padding: 20px;
-    border-radius: 20px;
+/*Button Styling */
+.btn, btn-over {
+    background: var(--secondary);
+    color: var(--white);
+    padding: 10px;
+    border-radius: 10px;
     border: none;
-    box-shadow: 0 5px var(--color-orange-light);
-    margin-top: 20px;
+    box-shadow: 0 3px grey;
+    margin-top: 10px;
 }
 
 .btn:hover {
-    background: var(--color-orange-dark);
-    border-radius: 20px;   
-    box-shadow: 0 4px var(--color-orange-light);
+    background: var(--tertiary);
+    border-radius: 10px;
+    box-shadow: 0 2px grey;
     cursor: pointer;
 }
 
 .btn:active {
     border: none;
     outline: none;
-    box-shadow: 0 0 var(--color-orange-light);
+    box-shadow: 0 0 grey;
 }
 
 .btn:focus {
@@ -187,7 +170,7 @@ p {
 
 .btn-board {
     display: grid;
-    grid-template-rows: repeat(5, auto);
+    grid-template-rows: repeat(4, auto);
     grid-gap: 5px;
     margin: 20px 0;
 }
