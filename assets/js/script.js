@@ -162,7 +162,7 @@ let displayQuestion = function (index) {
   }
 };
 
-// new__ this function checks if clicked answer is correct and call appropriate function accordingly.
+// This function checks if clicked answer is correct and call appropriate function accordingly.
 let answerCheck = function (event) {
   var target = event.target || event.srcElement;
   if (target.innerHTML == correctAnswer) {
@@ -249,7 +249,7 @@ let createHighScore = function (event) {
   displayWinningScores();
 };
 
-//new__ rewritten this function to match and adopt to the situation
+// This function matches and adopts to the situation
 let winningScores = function (WinningScore) {
   // Pushes and sorts winning scores
   arrayWinningScores.push(WinningScore);
