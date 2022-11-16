@@ -48,7 +48,7 @@ let QuestionIndex = 0;
 // new __ variable to hold correct answer of current populated questioned
 let correctAnswer;
 //new__ blank winning array
-let winningarray;
+let winningArray;
 // Array set for Quiz Questions
 
 let questions = [
@@ -258,7 +258,7 @@ let winningScores = function (WinningScore) {
     return b.score - a.score;
   });
   sortWinningScore();
-  winningarray = arrayWinningScores;
+  winningArray = arrayWinningScores;
   saveWinningScore();
   loadWinningScore();
   return arrayWinningScores;
