@@ -68,7 +68,7 @@ let questions = [
 /* Return to main quiz page when the user clicks on the return button from the scoreboard page */
 
 let renderHomePage = function () {
-  scoreboardGridID.classList.remove("erveal"); // LINE 80: <div class="hide" id="correct">
+  scoreboardGridID.classList.remove("reveal"); // LINE 80: <div class="hide" id="correct">
   scoreboardGridID.classList.add("hide"); // LINE 80: <div class="hide" id="correct">
   quizInfoID.classList.add("hide"); // LINE 25: <div id="quiz-info" class="reveal">
   quizInfoID.classList.remove("reveal"); // LINE 25: <div id="quiz-info" class="reveal">
@@ -171,7 +171,7 @@ let answerCheck = function (event) {
   } else {
     answerIncorrect();
   }
-  movenext();
+  moveNext();
 };
 
 // Reveals correct! on the screen after the user chooses the correct answer
@@ -201,7 +201,7 @@ let answerIncorrect = function () {
 };
 
 // Moves the quiz page to the next question then checks for remaining questions
-let movenext = function () {
+let moveNext = function () {
   QuestionIndex++;
   if (questions.length > QuestionIndex + 1) {
     setQuestion();
