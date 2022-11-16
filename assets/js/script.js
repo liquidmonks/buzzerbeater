@@ -96,19 +96,19 @@ let renderHomePage = function () {
 
 // Restarts quiz at default time of 20 seconds if quizDone == true at 1 second intervals.
 
-//new__ change all sparetime to timeleft
+// Time remaining after quiz is completed
 let setTime = function () {
-  timeleft = 20;
+  timeLeft = 20;
 
   let checkTime = setInterval(function () {
-    timerID.innerText = timeleft;
-    timeleft--;
+    timerID.innerText = timeLeft;
+    timeLeft--;
 
     if (quizDone) {
       clearInterval(checkTime);
     }
 
-    if (timeleft < 0) {
+    if (timeLeft < 0) {
       showScore();
       timerID.innerText = 0;
       clearInterval(checkTime);
