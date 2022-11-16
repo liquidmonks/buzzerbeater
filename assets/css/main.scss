@@ -127,6 +127,7 @@
     padding: 20px;
     margin: auto;
     text-align: center;
+    border: 4mm ridge rgb(50 117 220 / 60%);
   }
   
   .quiz-start button {
@@ -204,7 +205,7 @@
   }
   
   .quiz-questions button.incorrect:disabled
-}
+
 
 // Let's Go button
   #start-quiz {
@@ -223,6 +224,7 @@
     color: var(--primary);
     font-size: 3rem;
     font-weight: 800;
+    border-style: dashed;
   }
   
   p {
