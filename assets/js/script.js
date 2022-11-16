@@ -68,6 +68,7 @@ let questions = [
 /* Return to main quiz page when the user clicks on the return button from the scoreboard page */
 
 let renderHomePage = function () {
+  scoreboardGridID.classList.remove("erveal"); // LINE 80: <div class="hide" id="correct">
   scoreboardGridID.classList.add("hide"); // LINE 80: <div class="hide" id="correct">
   quizInfoID.classList.add("hide"); // LINE 25: <div id="quiz-info" class="reveal">
   quizInfoID.classList.remove("reveal"); // LINE 25: <div id="quiz-info" class="reveal">
@@ -122,7 +123,7 @@ let startGame = function () {
   quizInfoID.classList.add("hide"); // LINE 25: <div id="quiz-info" class="reveal">
   quizInfoID.classList.remove("reveal"); // LINE 25: <div id="quiz-info" class="reveal">
   quizBoardID.classList.remove("hide"); // LINE 41: <div id="quiz-board" class="hide">
-  quizBoardID.classList.add("show"); // LINE 41: <div id="quiz-board" class="hide">
+  quizBoardID.classList.add("reveal"); // LINE 41: <div id="quiz-board" class="hide">
   //Shuffle the questions so they show in random order
   arrayQuizQuestions = questions.sort(() => Math.random() - 0.5); // New variable - no direct link to index.html
   setTime(); // New variable - no direct link to index.html
@@ -322,7 +323,7 @@ let loadWinningScore = function () {
 let displayWinningScores = function () {
   // New variable - no direct link to index.html
   // quizInfoID.classList.remove("hide");
-  // quizInfoID.classList.add("reveal");
+  quizInfoID.classList.add("hide");
   quizDone = "true";
 
   if ((quizOverID.className = "reveal")) {
@@ -385,3 +386,4 @@ winnersListID.addEventListener("click", displayWinningScores);
 btnReturnID.addEventListener("click", renderHomePage);
 // When user clicks on the clear scores button
 btnClearScoreboardID.addEventListener("click", clearScores);
+scoreboardID.addEventListener("click", displayWinningScores);
