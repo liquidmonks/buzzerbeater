@@ -165,7 +165,7 @@ let displayQuestion = function (index) {
 
 // This function checks if clicked answer is correct and call appropriate function accordingly.
 let answerCheck = function (event) {
-  var target = event.target || event.srcElement;
+  let target = event.target || event.srcElement;
   if (target.innerHTML == correctAnswer) {
     answerCorrect();
   } else {
@@ -278,7 +278,7 @@ let clearWinningScore = function () {
 let sortWinningScore = function () {
   for (let i = 0; i < arrayWinningScores.length; i++) {
     if (arrayWinningScores[i] != undefined) {
-      var highScoreID = document.createElement("li");
+      let highScoreID = document.createElement("li");
       highScoreID.ClassName = "winners-score";
       highScoreID.innerHTML = arrayWinningScores[i].initials + " - " + arrayWinningScores[i].score;
       winnersListID.appendChild(highScoreID);
@@ -298,7 +298,7 @@ let saveWinningScore = function () {
 
 let loadWinningScore = function () {
   // New variable - no direct link to index.html
-  var LoadedWinningScores = localStorage.getItem("winningScores");
+  let LoadedWinningScores = localStorage.getItem("winningScores");
   if (!LoadedWinningScores) {
     return false;
   }
