@@ -3,40 +3,38 @@
 /* Global Variable Sets */
 
 // Quiz Board Section
-let quizQuestionsID = document.getElementById("quiz-questions"); // LINE 42: <div class="quiz-questions">
-let quizBoardID = document.getElementById("quiz-board"); // LINE 41: <div id="quiz-board" class="hide">
-let quizInfoID = document.getElementById("quiz-info"); // LINE 36: <div id="quiz-info" class="reveal">
+let quizQuestionsID = document.getElementById("quiz-questions");
+let quizBoardID = document.getElementById("quiz-board");
+let quizInfoID = document.getElementById("quiz-info");
 
 // Quiz Over Section
-let quizOverID = document.getElementById("quiz-over"); // LINE 49: <div id="quiz-over" class="hide">
-let scoreAnnounceID = document.getElementById("score-announce"); // LINE 62: <div id="score-announce">
-let recordInitialsID = document.getElementById("record-initials"); // Input form section
-
+let quizOverID = document.getElementById("quiz-over");
+let scoreAnnounceID = document.getElementById("score-announce");
+let recordInitialsID = document.getElementById("record-initials");
 // Scoreboard Section
-let scoreboardGridID = document.getElementById("scoreboard-grid"); // LINE 77: <div id="scoreboard-grid" class="hide">
-let winnersListID = document.getElementById("winners-list"); // LINE 51: <div id="score-announce">
+let scoreboardGridID = document.getElementById("scoreboard-grid");
+let winnersListID = document.getElementById("winners-list");
 
 // Header Section
-let scoreboardID = document.getElementById("scoreboard"); // LINE 15:  <h2 id="scoreboard">High Scores</h2>
+let scoreboardID = document.getElementById("scoreboard");
 
 // Quiz Key Section
-let correctID = document.getElementById("correct"); // LINE 80: <div class="hide" id="correct">
-let incorrectID = document.getElementById("incorrect"); // LINE 85: <div class="hide" id="incorrect">
+let correctID = document.getElementById("correct");
+let incorrectID = document.getElementById("incorrect");
 
 // Quiz Button Elements
-let btnStartGameID = document.getElementById("start-quiz"); // LINE 35: <button class="btn-over" id="start-quiz">Let's Go!</button>
-let btnReturnID = document.getElementById("return"); // LINE 71: <button class="btn" id="return">Return To Quiz</button>
-let btnClearScoreboardID = document.getElementById("clear-scoreboard"); // LINE 72: <button class="btn" id="clear-scoreboard">Clear Scoreboard</button>
+let btnStartGameID = document.getElementById("start-quiz");
+let btnReturnID = document.getElementById("return");
+let btnClearScoreboardID = document.getElementById("clear-scoreboard");
 
 // Quiz Q&A ID Elements
-let questionID = document.getElementById("question"); // LINE 43: <div id="question"></div>
-let answerKeyID = document.getElementById("answer-key"); // LINE 44: <div id="answer-key" class="btn-board"></div>
-
-let timerID = document.querySelector("#timer"); // LINE 16: <h2 class="countdown">Countdown: <span id="timer"></span></h2>
-let score = 0; // New variable - no direct link to index.html
+let questionID = document.getElementById("question");
+let answerKeyID = document.getElementById("answer-key");
+let timerID = document.querySelector("#timer");
+let score = 0;
 let spareTime; // Remaining time left after countdown // New variable - no direct link to index.html
-let quizDone; // New variable - no direct link to index.html
-timerID.innerText = 0; // LINE 16: <h2 class="countdown">Countdown: <span id="timer"></span></h2>
+let quizDone;
+timerID.innerText = 0;
 
 // Winning Score list Array parameter
 let arrayWinningScores = [];
@@ -45,9 +43,9 @@ let arrayWinningScores = [];
 let arrayQuizQuestions;
 let QuestionIndex = 0;
 
-// new __ variable to hold correct answer of current populated questioned
+// Vriable to hold correct answer of current populated questioned
 let correctAnswer;
-//new__ blank winning array
+// Sets a blank winning array
 let winningArray;
 // Array set for Quiz Questions
 
@@ -61,34 +59,32 @@ let questions = [
   { q: "What is the formula to check if a number is even?", a: "2. num % 2 == 0", choices: [{ choice: "1. num * .5 == 0" }, { choice: "2. num % 2 == 0" }, { choice: "3. num % num = 2" }, { choice: "4. trick question, there is no such thing." }] },
   { q: "What year was CSS awarded the top coding prize in the Silicon Valley Coding Awards?", a: "4. trick question, there is no such thing.", choices: [{ choice: "1. 2010" }, { choice: "2. 1995" }, { choice: "3. 2018" }, { choice: "4. trick question, there is no such thing." }] },
   { q: "What HTML tag did NASA astronauts carve on a moon rock?", a: "4. trick question, there is no such thing.", choices: [{ choice: "1. <h1>" }, { choice: "2. <p>" }, { choice: "3. <option>" }, { choice: "4. trick question, there is no such thing." }] },
-  { q: "What characters are used to create a function body in Javascript?", a: "3. curly braces", choices: [{ choice: "1. parenthesis" }, { choice: "2. quotation marks" }, { choice: "3. Curly braces" }, { choice: "4. dollar signs" }] },
+  { q: "What characters are used to create a function body in Javascript?", a: "3. curly braces", choices: [{ choice: "1. parenthesis" }, { choice: "2. quotation marks" }, { choice: "3. curly braces" }, { choice: "4. dollar signs" }] },
   { q: "Name an application programing interface where a DOM is located?", a: "1. HTML document", choices: [{ choice: "1. HTML document" }, { choice: "2. local storage" }, { choice: "3. XLM document" }, { choice: "4. the cloud" }] },
 ];
 
 /* Return to main quiz page when the user clicks on the return button from the scoreboard page */
 
 let renderHomePage = function () {
-  scoreboardGridID.classList.add("hide"); // LINE 77: <div id="scoreboard-grid" class="hide">
-  scoreboardGridID.classList.remove("reveal"); // LINE 77: <div id="scoreboard-grid" class="hide">
-  quizInfoID.classList.remove("hide"); // LINE 36: <div id="quiz-info" class="reveal">
-  quizInfoID.classList.add("reveal"); // LINE 36: <div id="quiz-info" class="reveal">
-  scoreAnnounceID.removeChild(scoreAnnounceID.lastChild); // LINE 62: <div id="score-announce">
+  scoreboardGridID.classList.add("hide");
+  scoreboardGridID.classList.remove("reveal");
+  quizInfoID.classList.remove("hide");
+  quizInfoID.classList.add("reveal");
+  scoreAnnounceID.removeChild(scoreAnnounceID.lastChild);
   QuestionIndex = 0;
-  quizDone = ""; // New variable - no direct link to index.html
-  timerID.textContent = 0; // LINE 16: <h2 class="countdown">Countdown: <span id="timer"></span></h2>
-  score = 0; // New variable - no direct link to index.html
+  quizDone = "";
+  timerID.textContent = 0;
+  score = 0;
 
   // reveal and hide values
 
   if ((correctID.className = "reveal")) {
-    // LINE 80: <div class="hide" id="correct">
-    correctID.classList.remove("reveal"); // LINE 80: <div class="hide" id="correct">
-    correctID.classList.add("hide"); // LINE 80: <div class="hide" id="correct">
+    correctID.classList.remove("reveal");
+    correctID.classList.add("hide");
   }
   if ((incorrectID.className = "reveal")) {
-    // LINE 85: <div class="hide" id="incorrect">
-    incorrectID.classList.remove("reveal"); // LINE 85: <div class="hide" id="incorrect">
-    incorrectID.classList.add("hide"); // LINE 85: <div class="hide" id="incorrect">
+    incorrectID.classList.remove("reveal");
+    incorrectID.classList.add("hide");
   }
 };
 
@@ -117,29 +113,26 @@ let setTime = function () {
 // Reveals and hides the Quiz from the Home Page
 
 let startGame = function () {
-  // Reveals and hides the quiz from the home page.
-  quizInfoID.classList.add("hide"); // LINE 25: <div id="quiz-info" class="reveal">
-  quizInfoID.classList.remove("reveal"); // LINE 25: <div id="quiz-info" class="reveal">
-  quizBoardID.classList.remove("hide"); // LINE 41: <div id="quiz-board" class="hide">
-  quizBoardID.classList.add("reveal"); // LINE 41: <div id="quiz-board" class="hide">
-  //Shuffle the questions so they show in random order
-  arrayQuizQuestions = questions.sort(() => Math.random() - 0.5); // New variable - no direct link to index.html
-  setTime(); // New variable - no direct link to index.html
-  setQuestion(); // New variable - no direct link to index.html
+  quizInfoID.classList.add("hide");
+  quizInfoID.classList.remove("reveal");
+  quizBoardID.classList.remove("hide");
+  quizBoardID.classList.add("reveal");
+  // Shuffle the questions so they show in random order
+  arrayQuizQuestions = questions.sort(() => Math.random() - 0.5);
+  setTime();
+  setQuestion();
 };
 
 // Moves the user along to the next question
 
 let setQuestion = function () {
-  // New variable - no direct link to index.html
-  resetAnswers(); // New variable - no direct link to index.html
-  displayQuestion(arrayQuizQuestions[QuestionIndex]); // New variable - no direct link to index.html
+  resetAnswers();
+  displayQuestion(arrayQuizQuestions[QuestionIndex]);
 };
 
 // Hides the answer buttons
 
 let resetAnswers = function () {
-  // New variable - no direct link to index.html
   while (answerKeyID.firstChild) {
     answerKeyID.removeChild(answerKeyID.firstChild);
   }
@@ -149,6 +142,7 @@ let resetAnswers = function () {
 let displayQuestion = function (index) {
   questionID.innerText = index.q;
   for (const element of index.choices) {
+    // for of loop to iterate through the choices array and create a button for each choice in the array
     let answerKey = document.createElement("button");
     answerKey.innerText = element.choice;
     answerKey.classList.add("btn");
@@ -175,14 +169,12 @@ let answerCheck = function (event) {
 // Reveals correct! on the screen after the user chooses the correct answer
 
 let answerCorrect = function () {
-  // New variable - no direct link to index.html
   score++;
   if ((correctID.className = "hide")) {
-    // LINE 80: <div class="hide" id="correct">
-    correctID.classList.remove("hide"); // LINE 80: <div class="hide" id="correct">
-    correctID.classList.add("banner"); // LINE 80: <div class="hide" id="correct">
-    incorrectID.classList.remove("banner"); // LINE 85: <div class="hide" id="incorrect">
-    incorrectID.classList.add("hide"); // LINE 85: <div class="hide" id="incorrect">
+    correctID.classList.remove("hide");
+    correctID.classList.add("banner");
+    incorrectID.classList.remove("banner");
+    incorrectID.classList.add("hide");
   }
 };
 
@@ -190,11 +182,10 @@ let answerCorrect = function () {
 
 let answerIncorrect = function () {
   if ((incorrectID.className = "hide")) {
-    // LINE 85: <div class="hide" id="incorrect">
-    incorrectID.classList.remove("hide"); // LINE 85: <div class="hide" id="incorrect">
-    incorrectID.classList.add("banner"); // LINE 85: <div class="hide" id="incorrect">
-    correctID.classList.remove("banner"); // LINE 80: <div class="hide" id="correct">
-    correctID.classList.add("hide"); // LINE 80: <div class="hide" id="correct">
+    incorrectID.classList.remove("hide");
+    incorrectID.classList.add("banner");
+    correctID.classList.remove("banner");
+    correctID.classList.add("hide");
   }
 };
 
@@ -209,7 +200,7 @@ let moveNext = function () {
     }
     quizDone = "true";
     showScore();
-    //new__ setback questions to 0
+    // Resets questions to 0
     QuestionIndex = 0;
   }
 };
@@ -229,7 +220,6 @@ let showScore = function () {
 // Tabulates the high score values
 
 let createHighScore = function (event) {
-  // New variable - no direct link to index.html
   event.preventDefault();
   let initials = document.querySelector("#initials").value;
   if (!initials) {
@@ -240,7 +230,6 @@ let createHighScore = function (event) {
   recordInitialsID.reset();
 
   let WinningScore = {
-    // New variable - no direct link to index.html
     initials: initials,
     score: score,
   };
@@ -275,6 +264,7 @@ let clearWinningScore = function () {
 // Reveals questions and answer buttons
 let sortWinningScore = function () {
   for (const element of arrayWinningScores) {
+    // For...of loop that runs the body of the loop for every element in the iterable object
     if (element != undefined) {
       let highScoreID = document.createElement("li");
       highScoreID.ClassName = "winners-score";
@@ -295,7 +285,6 @@ let saveWinningScore = function () {
 // Loads variable values when the webpage loads
 
 let loadWinningScore = function () {
-  // New variable - no direct link to index.html
   let LoadedWinningScores = localStorage.getItem("winningScores");
   if (!LoadedWinningScores) {
     return false;
@@ -306,61 +295,55 @@ let loadWinningScore = function () {
     return b.score - a.score;
   });
   winnersListID.innerHTML = "";
-  for (let i = 0; i < LoadedWinningScores.length; i++) {
-    let highscoreID = document.createElement("li");
-    highscoreID.ClassName = "winners-score";
-    highscoreID.innerText = LoadedWinningScores[i].initials + " - " + LoadedWinningScores[i].score;
-    winnersListID.appendChild(highscoreID);
-    arrayWinningScores.push(LoadedWinningScores[i]);
+  for (const element of LoadedWinningScores) {
+    // For...of loop that runs the body of the loop for every element in the iterable object
+    let highScoreID = document.createElement("li");
+    highScoreID.ClassName = "winners-score";
+    highScoreID.innerText = element.initials + " - " + element.score;
+    winnersListID.appendChild(highScoreID);
+    arrayWinningScores.push(element);
   }
 };
 
 // Displays the winning score from the Winner's Circle page when link is clicked or initials are entered
 
 let displayWinningScores = function () {
-  // New variable - no direct link to index.html
-  // quizInfoID.classList.remove("hide");
+  quizInfoID.classList.remove("reveal");
   quizInfoID.classList.add("hide");
   quizDone = "true";
 
   if ((quizOverID.className = "reveal")) {
-    // LINE 49: <div id="quiz-over" class="hide">
-    quizOverID.classList.remove("reveal"); // LINE 49: <div id="quiz-over" class="hide">
-    quizOverID.classList.add("hide"); // LINE 49: <div id="quiz-over" class="hide">
+    quizOverID.classList.remove("reveal");
+    quizOverID.classList.add("hide");
   }
   if ((quizBoardID.className = "reveal")) {
-    // LINE 41: <div id="quiz-board" class="hide">
-    quizBoardID.classList.remove("reveal"); // LINE 41: <div id="quiz-board" class="hide">
-    quizBoardID.classList.add("hide"); // LINE 41: <div id="quiz-board" class="hide">
+    quizBoardID.classList.remove("reveal");
+    quizBoardID.classList.add("hide");
   }
 
   if ((quizBoardID.className = "reveal")) {
-    // LINE 41: <div id="quiz-board" class="hide">
-    quizBoardID.classList.remove("reveal"); // LINE 41: <div id="quiz-board" class="hide">
-    quizBoardID.classList.add("hide"); // LINE 41: <div id="quiz-board" class="hide">
+    quizBoardID.classList.remove("reveal");
+    quizBoardID.classList.add("hide");
   }
 
   if ((correctID.className = "reveal")) {
-    // LINE 80: <div class="hide" id="correct">
-    correctID.classList.remove("reveal"); // LINE 80: <div class="hide" id="correct">
-    correctID.classList.add("hide"); // LINE 80: <div class="hide" id="correct">
+    correctID.classList.remove("reveal");
+    correctID.classList.add("hide");
   }
 
   if ((incorrectID.className = "reveal")) {
-    // LINE 85: <div class="hide" id="incorrect">
-    incorrectID.classList.remove("reveal"); // LINE 85: <div class="hide" id="incorrect">
-    incorrectID.classList.add("hide"); // LINE 85: <div class="hide" id="incorrect">
+    incorrectID.classList.remove("reveal");
+    incorrectID.classList.add("hide");
   }
   if ((scoreboardGridID.className = "hide")) {
-    scoreboardGridID.classList.remove("hide"); // LINE 80: <div class="hide" id="correct">
-    scoreboardGridID.classList.add("reveal"); // LINE 80: <div class="hide" id="correct">
+    scoreboardGridID.classList.remove("hide");
+    scoreboardGridID.classList.add("reveal");
   }
 };
 
 // Clears the high scores from the Winner's Circle
 
 let clearScores = function () {
-  // New variable - no direct link to index.html
   winningScores = [];
 
   while (winnersListID.firstChild) {
