@@ -74,8 +74,7 @@ header {
 }
 
 body {
-  background-color: var(--color-background);
-  color: var(--color-grey-4);
+  background-color: var(--color-grey-0);
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
@@ -127,6 +126,16 @@ header h2 {
   margin: auto;
   text-align: center;
   border: 4mm ridge rgba(50, 117, 220, 0.6);
+  color: var(--color-tertiary);
+}
+
+.p-text {
+  font-size: 1.5rem;
+  padding: 20px;
+  margin: auto;
+  text-align: center;
+  border: 2mm ridge rgba(9, 9, 9, 0.6);
+  color: black;
 }
 
 .quiz-start button {
