@@ -43,7 +43,7 @@ header {
 
 #scoreboard:hover {
   cursor: pointer;
-  color: var(--color-orange-dark);
+  color: var(--color-white);
 }
 
 .winners-scoreboard {
@@ -94,7 +94,7 @@ header {
 
 #scoreboard:hover {
   cursor: pointer;
-  color: var(--color-orange-dark);
+  color: var(--color-white);
 }
 
 header h2 {
@@ -137,6 +137,7 @@ header h2 {
   font-size: 1.5rem;
   margin: 1em;
   cursor: pointer;
+  box-shadow: 0 0 0.5em black;
 }
 
 .quiz-start button:hover {
@@ -228,13 +229,17 @@ p {
 }
 
 .rules-title {
-  font-size: 20px;
+  font-size: 80px;
+  font-weight: 600;
   align-items: left;
   text-align: left;
+  color: var(--color-orange-dark);
 }
 
 .rules-list {
   text-align: left;
+  font-size: 15px;
+  border-style: inset;
 }
 
 .quiz-questions {
@@ -287,21 +292,21 @@ p {
   padding: 10px;
   border-radius: 10px;
   border: none;
-  box-shadow: 0 3px grey;
+  box-shadow: 0 5px rgb(19, 1, 1);
   margin-top: 10px;
 }
 
 .btn:hover {
   background: var(--tertiary);
   border-radius: 10px;
-  box-shadow: 0 2px grey;
+  box-shadow: 0 2px black;
   cursor: pointer;
 }
 
 .btn:active {
   border: none;
   outline: none;
-  box-shadow: 0 0 grey;
+  box-shadow: 0 0 black;
 }
 
 .btn:focus {
@@ -452,4 +457,4 @@ p {
   grid-template-rows: repeat(4, auto);
   grid-gap: 5px;
   margin: 20px 0;
-} /*# sourceMappingURL=main.css.map *//*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
