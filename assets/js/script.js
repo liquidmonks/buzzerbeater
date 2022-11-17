@@ -5,15 +5,15 @@
 // Quiz Board Section
 let quizQuestionsID = document.getElementById("quiz-questions"); // LINE 42: <div class="quiz-questions">
 let quizBoardID = document.getElementById("quiz-board"); // LINE 41: <div id="quiz-board" class="hide">
-let quizInfoID = document.getElementById("quiz-info"); // LINE 25: <div id="quiz-info" class="reveal">
+let quizInfoID = document.getElementById("quiz-info"); // LINE 36: <div id="quiz-info" class="reveal">
 
 // Quiz Over Section
 let quizOverID = document.getElementById("quiz-over"); // LINE 49: <div id="quiz-over" class="hide">
-let scoreAnnounceID = document.getElementById("score-announce"); // LINE 51: <div id="score-announce">
+let scoreAnnounceID = document.getElementById("score-announce"); // LINE 62: <div id="score-announce">
 let recordInitialsID = document.getElementById("record-initials"); // Input form section
 
 // Scoreboard Section
-let scoreboardGridID = document.getElementById("scoreboard-grid"); // LINE 66: <div id="scoreboard-grid" class="hide">
+let scoreboardGridID = document.getElementById("scoreboard-grid"); // LINE 77: <div id="scoreboard-grid" class="hide">
 let winnersListID = document.getElementById("winners-list"); // LINE 51: <div id="score-announce">
 
 // Header Section
@@ -68,13 +68,11 @@ let questions = [
 /* Return to main quiz page when the user clicks on the return button from the scoreboard page */
 
 let renderHomePage = function () {
-  scoreboardGridID.classList.remove("reveal"); // LINE 80: <div class="hide" id="correct">
-  scoreboardGridID.classList.add("hide"); // LINE 80: <div class="hide" id="correct">
-  quizInfoID.classList.add("hide"); // LINE 25: <div id="quiz-info" class="reveal">
-  quizInfoID.classList.remove("reveal"); // LINE 25: <div id="quiz-info" class="reveal">
-  quizBoardID.classList.remove("hide"); // LINE 41: <div id="quiz-board" class="hide">
-  quizBoardID.classList.add("reveal"); // LINE 41: <div id="quiz-board" class="hide">
-  scoreAnnounceID.innerHTML = ""; // LINE 51: <div id="score-announce">
+  scoreboardGridID.classList.add("hide"); // LINE 77: <div id="scoreboard-grid" class="hide">
+  scoreboardGridID.classList.remove("reveal"); // LINE 77: <div id="scoreboard-grid" class="hide">
+  quizInfoID.classList.remove("hide"); // LINE 36: <div id="quiz-info" class="reveal">
+  quizInfoID.classList.add("reveal"); // LINE 36: <div id="quiz-info" class="reveal">
+  scoreAnnounceID.removeChild(scoreAnnounceID.lastChild); // LINE 62: <div id="score-announce">
   QuestionIndex = 0;
   quizDone = ""; // New variable - no direct link to index.html
   timerID.textContent = 0; // LINE 16: <h2 class="countdown">Countdown: <span id="timer"></span></h2>
@@ -150,15 +148,15 @@ let resetAnswers = function () {
 // Reveals questions to the user along with an answer button check
 let displayQuestion = function (index) {
   questionID.innerText = index.q;
-  for (let i = 0; i < index.choices.length; i++) {
+  for (const element of index.choices) {
     let answerKey = document.createElement("button");
-    answerKey.innerText = index.choices[i].choice;
+    answerKey.innerText = element.choice;
     answerKey.classList.add("btn");
-    answerKey.classList.add("answerbtn");
+    answerKey.classList.add("answerBtn");
     answerKey.addEventListener("click", answerCheck);
     answerKeyID.appendChild(answerKey);
 
-    // new__ assigning correct answer to the variable
+    // Assigns correct answer to the variable
     correctAnswer = index.a;
   }
 };
@@ -207,7 +205,7 @@ let moveNext = function () {
     setQuestion();
   } else {
     if (score > 0) {
-      score = score + timeleft;
+      score = score + timeLeft;
     }
     quizDone = "true";
     showScore();
@@ -274,13 +272,13 @@ let clearWinningScore = function () {
 
 // Creates winning scores from highest to lowest in the Winner's Circle
 
-//new__ removed for loop from this section
+// Reveals questions and answer buttons
 let sortWinningScore = function () {
-  for (let i = 0; i < arrayWinningScores.length; i++) {
-    if (arrayWinningScores[i] != undefined) {
+  for (const element of arrayWinningScores) {
+    if (element != undefined) {
       let highScoreID = document.createElement("li");
       highScoreID.ClassName = "winners-score";
-      highScoreID.innerHTML = arrayWinningScores[i].initials + " - " + arrayWinningScores[i].score;
+      highScoreID.innerHTML = element.initials + " - " + element.score;
       winnersListID.appendChild(highScoreID);
     }
   }
@@ -315,7 +313,6 @@ let loadWinningScore = function () {
     winnersListID.appendChild(highscoreID);
     arrayWinningScores.push(LoadedWinningScores[i]);
   }
-  // displayWinningScores();
 };
 
 // Displays the winning score from the Winner's Circle page when link is clicked or initials are entered
